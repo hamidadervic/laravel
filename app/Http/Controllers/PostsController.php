@@ -8,18 +8,25 @@ use App\Http\Requests;
 
 use App\Post; //Bring Post model so we can use it
 
+//use DB; -> For SQL syntax
+
 class PostsController extends Controller
 {
 
     public function index()
     {
-        $posts =  Post::all(); //Make it availale for view posts.index
+        //$posts =  Post::all(); -> version 1
+        //$post = DB::select('SELECT * FROM posts'); -> SQL syntaxt 
+
+        //$posts = Post::orderBy('title','desc')->get();
+
+        $posts = Post::orderBy('title','desc')->paginate(10);
         return view('posts.index')->with('posts', $posts);
     }
 
     public function create()
     {
-       return '<h1> POST CREATE </h1>';
+       return view('posts.create');
     }
 
 

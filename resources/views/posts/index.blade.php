@@ -20,10 +20,13 @@
                     <td> <?php echo $post->body; ?> </td>
                     <td> <?php echo $post->created_at; ?> </td>
                  </tr>
-			<?php  } ?>
+			<?php  }  ?>
 			</tbody>
 		</table>
 		<?php } ?>
+
+		    <?php echo $posts->links();  ?>
+
 	</div>
 </div>
 @endsection
