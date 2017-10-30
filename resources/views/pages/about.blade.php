@@ -7,6 +7,4 @@
                 <h3> This is about page, about </h3>
             </div>
         </div>
-    </body>
-</html>
 @endsection
