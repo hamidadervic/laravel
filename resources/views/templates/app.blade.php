@@ -7,8 +7,9 @@
         <link rel="stylesheet" href="http://localhost/blog/public/css/app.css">
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container">
              @include('inc.navbar')
+             @include('inc.messages')
         </div>
         @yield('content')
     </body>
