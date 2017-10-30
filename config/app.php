@@ -148,6 +148,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class, //For laravel forms
+        Unisharp\Ckeditor\ServiceProvider::class, //For editor
 
         /*
          * Application Service Providers...

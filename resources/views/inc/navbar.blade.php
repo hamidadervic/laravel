@@ -19,8 +19,10 @@
               <a class="nav-link" href="/blog/public/posts">All posts</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          </form>
+          <ul class="nav navbar-nav navbar-right">
+               <li class="nav-item">
+                 <a class="nav-link" href="/blog/public/posts/create">Add post</a>
+               </li>
+           </ul>
         </div>
       </nav>

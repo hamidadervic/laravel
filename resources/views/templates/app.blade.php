@@ -12,5 +12,11 @@
              @include('inc.messages')
         </div>
         @yield('content')
+
+    <!-- For ckeditor -->
+    <script src="/blog/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
     </body>
 </html>

@@ -12,7 +12,7 @@
                   </div>
                   <div class="form-group">
                       <?php echo Form::label('body','Body'); ?>
-                      <?php echo Form::textarea('body','',['class' => 'form-control','placeholder' => 'Add your body text', 'coll' => 3]); ?>
+                      <?php echo Form::textarea('body','',['id' => 'article-ckeditor','class' => 'form-control','placeholder' => 'Add your body text', 'coll' => 3]); ?>
                   </div>
                   <?php echo Form::submit('Submit',['class' => 'btn btn-default']); ?>
                 <?php echo Form::close(); ?>
