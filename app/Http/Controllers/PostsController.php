@@ -13,7 +13,14 @@ use App\Post; //Bring Post model so we can use it
 class PostsController extends Controller
 {
 
-
+    /*
+    Prevent guest users (with construct function) to create or/and posts, 
+    This functions are available just for registered users
+    */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
