@@ -13,6 +13,8 @@ use App\Post; //Bring Post model so we can use it
 class PostsController extends Controller
 {
 
+
+
     public function index()
     {
         //$posts =  Post::all(); -> version 1
