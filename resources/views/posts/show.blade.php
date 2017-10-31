@@ -11,14 +11,17 @@
                    
                    <!-- If user IS NOT a guest, show below: -->
                    <?php if(!Auth::guest()) { ?>
-                       <a href="/blog/public/posts/<?php echo $post->id; ?>/edit" class="btn btn-primary"> Edit </a>
+                        <!-- Another condition, user_id -->
+                        <?php if (Auth::user()->id == $post->user_id ) { ?>
+                              <a href="/blog/public/posts/<?php echo $post->id; ?>/edit" class="btn btn-primary"> Edit </a>
 
                    <!-- Delete this post with form -->
                    <?php echo Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'POST', 'class' => 'pull-right' ]); ?>
                          <!-- Hidden delete request because we can't make POST request to this route-->
                         <input name="_method" type="hidden" value="DELETE">
                         <?php echo Form::submit('Delete',['class' => 'btn btn-danger']); ?>
-                   <?php echo Form::close(); ?>
+                        <?php echo Form::close(); ?>
+                       <?php } ?>
                    <?php  } ?>
             </div>
          </div>
