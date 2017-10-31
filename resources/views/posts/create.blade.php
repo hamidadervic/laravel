@@ -1,9 +1,9 @@
-@extends('templates.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
          <div class="row">
-            <div class="jumbotron col-md-6 offset-md-3">
+            <div class="jumbotron col-md-8 offset-md-2">
                 <h4 class="text-center"> Create post </h4>
                 <?php echo Form::open(['action' => 'PostsController@store', 'method' => 'POST']); ?>
                   <div class="form-group">

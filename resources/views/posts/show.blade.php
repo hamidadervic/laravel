@@ -1,10 +1,10 @@
-@extends('templates.app')
+@extends('layouts.app')
 
 @section('content')
      <div class="container">
          <div class="row jumbotron">
             <div class="col-md-4 offset-md-4">
-                   <strong> <?php echo $post->title; ?>  </strong>
+                   <h3> <?php echo $post->title; ?>  </h3>
                    <p> <?php echo $post->body; ?> </p>
                    <small> Created at: <?php echo $post->created_at; ?> </small>
                    <hr>

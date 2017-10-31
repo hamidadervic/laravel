@@ -8,7 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <a class="btn btn-primary" href="{{ url('posts/create') }}"> Create post </a>
+                    <h5> You are logged in! </h5>
                 </div>
             </div>
         </div>
