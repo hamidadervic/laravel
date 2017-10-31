@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
          <div class="row">
-            <div class="jumbotron col-md-6 offset-md-3">
-                <h4 class="text-center"> Create post </h4>
+            <div class="jumbotron col-md-8 offset-md-1">
+                <h4 class="text-center"> Edit post </h4>
                 <?php echo Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST']); ?>
                   <div class="form-group">
                       <?php echo Form::label('title','Title'); ?>

@@ -19,7 +19,7 @@
                  <tr>
                     <td> <a href="/blog/public/posts/<?php echo $post->id; ?>"> <?php echo $post->title; ?> </a> </td>
                     <td> <?php echo $post->body; ?> </td>
-                    <td> <?php echo $post->created_at; ?> </td>
+                    <td> <small> <?php echo $post->created_at; ?> by <?php echo $post->user['name']; ?> </small>   </td>
                  </tr>
 			<?php  }  ?>
 			</tbody>
