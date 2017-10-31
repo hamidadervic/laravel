@@ -19,7 +19,12 @@ class PostsController extends Controller
     */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except' => ['index','show']]);
+        /*
+        index and show are the routes that are visible to guest users
+        ['except' => ['index','show']]
+        */
+
     }
 
     public function index()
