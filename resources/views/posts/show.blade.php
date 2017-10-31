@@ -7,6 +7,15 @@
                    <strong> <?php echo $post->title; ?>  </strong>
                    <p> <?php echo $post->body; ?> </p>
                    <small> Created at: <?php echo $post->created_at; ?> </small>
+                   <hr>
+                   <a href="/blog/public/posts/<?php echo $post->id; ?>/edit" class="btn btn-primary"> Edit </a>
+
+                   <!-- Delete this post with form -->
+                   <?php echo Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'POST', 'class' => 'pull-right' ]); ?>
+                         <!-- Hidden delete request because we can't make POST request to this route-->
+                        <input name="_method" type="hidden" value="DELETE">
+                        <?php echo Form::submit('Delete',['class' => 'btn btn-danger']); ?>
+                   <?php echo Form::close(); ?>
             </div>
          </div>
      </div>
