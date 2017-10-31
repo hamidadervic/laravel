@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+@include('inc.messages')
 	<h2 class="text-center"> All posts </h2> <hr>
 	<div class="content">
 		<?php if ( count ( $posts ) > 0 ) { //If there are posts ?>
