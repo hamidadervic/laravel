@@ -8,7 +8,10 @@
                    <p> <?php echo $post->body; ?> </p>
                    <small> Created at: <?php echo $post->created_at; ?> </small>
                    <hr>
-                   <a href="/blog/public/posts/<?php echo $post->id; ?>/edit" class="btn btn-primary"> Edit </a>
+                   
+                   <!-- If user IS NOT a guest, show below: -->
+                   <?php if(!Auth::guest()) { ?>
+                       <a href="/blog/public/posts/<?php echo $post->id; ?>/edit" class="btn btn-primary"> Edit </a>
 
                    <!-- Delete this post with form -->
                    <?php echo Form::open(['action' => ['PostsController@destroy',$post->id],'method' => 'POST', 'class' => 'pull-right' ]); ?>
@@ -16,6 +19,7 @@
                         <input name="_method" type="hidden" value="DELETE">
                         <?php echo Form::submit('Delete',['class' => 'btn btn-danger']); ?>
                    <?php echo Form::close(); ?>
+                   <?php  } ?>
             </div>
          </div>
      </div>
