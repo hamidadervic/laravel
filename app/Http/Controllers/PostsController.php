@@ -108,11 +108,11 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
-        // Redirect for editing if user is not logged
+        // Redirect for deleteing post if user is not logged
         if (auth()->user()->id !== $post->user_id ) {
             return redirect('/posts')->with('error','Unauthorized page!');
         }
-        
+
         $post->delete();
         return redirect('/posts')->with('success','Post deleted!');
     }
