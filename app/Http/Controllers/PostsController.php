@@ -70,7 +70,7 @@ class PostsController extends Controller
             $fileNameToStore = $fileName . '_' . time() . '.' . $extension; 
 
             // On the end, the variable for saving the image with laravel
-            $path = $request->file('coverimage')->storeAs('public/coverimages',$fileNameToStore); //Hm I can't use storeAs because of version - 5-2-45
+            $path = $request->file('coverimage')->storeAs('public/coverimages',$fileNameToStore); //Hm I can't use storeAs because of version - 5.2.45
         } else {
             $fileNameToStore = 'noimage';
         }
@@ -102,7 +102,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
-        // Redirect for editing if user is not logged
+        // User can edit just posts that he is wrote
         if (auth()->user()->id !== $post->user_id ) {
             return redirect('/posts')->with('error','Unauthorized page!');
         }
@@ -133,6 +133,7 @@ class PostsController extends Controller
         $post = Post::find($id);
 
         // Redirect for deleteing post if user is not logged
+        // User can delete just posts that he is wrote
         if (auth()->user()->id !== $post->user_id ) {
             return redirect('/posts')->with('error','Unauthorized page!');
         }
